@@ -16,13 +16,13 @@ class MyTopo(Topo):
         s4 = self.addSwitch("s4")
 
         self.addLink(h1, s1)
-        self.addLink(h1, s2)
+        self.addLink(s1, s2)
         self.addLink(s2, h2)
 
         self.addLink(s1, s3)
 
         self.addLink(h3, s3)
-        self.addLink(h3, s4)
+        self.addLink(s3, s4)
         self.addLink(s4, h4)
         #-------- Please put your code here --------
 
