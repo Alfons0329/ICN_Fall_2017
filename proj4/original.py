@@ -77,9 +77,9 @@ def config(hosts, switches, routers):
     hosts['h5'].cmd('ifconfig h5-eth0 192.168.2.1/24')
     hosts['h6'].cmd('ifconfig h6-eth0 192.168.2.2/24')
 
-    routers['r1'].cmd('put_your_config_here')
-    routers['r1'].cmd('put_your_config_here')
-    routers['r2'].cmd('put_your_config_here')
+    routers['r1'].cmd('ifconfig r1-eth0 put_your_config_here')
+    routers['r1'].cmd('ifconfig r1-eth1 put_your_config_here')
+    routers['r2'].cmd('ifconfig r2-eth0 put_your_config_here')
     routers['r2'].cmd('ifconfig r2-eth1 put_your_config_here')
     routers['r3'].cmd('ifconfig r3-eth0 10.0.1.2/24')
     routers['r3'].cmd('ifconfig r3-eth1 192.168.1.62/26')
@@ -88,9 +88,9 @@ def config(hosts, switches, routers):
 
     # Host routing table configuration
     hosts['h1'].cmd('route add default gw 192.168.1.62')
-    hosts['h2'].cmd('route add default gw 192.168.1.62')
-    hosts['h3'].cmd('route add default gw 192.168.1.126')
-    hosts['h4'].cmd('route add default gw 192.168.1.126')
+    hosts['h2'].cmd('put_your_config_here')
+    hosts['h3'].cmd('put_your_config_here')
+    hosts['h4'].cmd('put_your_config_here')
     hosts['h5'].cmd('put_your_config_here')
     hosts['h6'].cmd('put_your_config_here')
 
@@ -122,10 +122,3 @@ def check(hosts):
 
 if __name__ == '__main__':
     topology()
-"""
-
-    ifconfig r1-eth0 10.0.0.1/24
-ifconfig r1-eth1 10.0.1.1/24
-ifconfig r2-eth0 10.0.0.2/24
-
-"""
