@@ -80,7 +80,7 @@ def config(hosts, switches, routers):
     routers['r1'].cmd('ifconfig r1-eth0 10.0.0.1/24') #
     routers['r1'].cmd('ifconfig r1-eth1 10.0.1.1/24') #
     routers['r2'].cmd('ifconfig r2-eth0 10.0.0.2/24') #
-    routers['r2'].cmd('ifconfig r2-eth1 192.168.2.125/24')
+    routers['r2'].cmd('ifconfig r2-eth1 192.168.2.137/24')
     routers['r3'].cmd('ifconfig r3-eth0 10.0.1.2/24')
     routers['r3'].cmd('ifconfig r3-eth1 192.168.1.62/26')
     routers['r4'].cmd('ifconfig r4-eth0 10.0.1.3/24')
@@ -91,15 +91,15 @@ def config(hosts, switches, routers):
     hosts['h2'].cmd('route add default gw 192.168.1.62')
     hosts['h3'].cmd('route add default gw 192.168.1.126')
     hosts['h4'].cmd('route add default gw 192.168.1.126')
-    hosts['h5'].cmd('route add default gw 192.168.2.125') #
-    hosts['h6'].cmd('route add default gw 192.168.2.125') #
+    hosts['h5'].cmd('route add default gw 192.168.2.137') #
+    hosts['h6'].cmd('route add default gw 192.168.2.137') #
 
     # Router routing table configuration
     routers['r1'].cmd('route add -net 192.168.1.64/26 gw 10.0.1.3') #r1-r4
     routers['r1'].cmd('route add -net 192.168.2.0/24 gw 10.0.0.2') #r1-r2
     routers['r1'].cmd('route add -net 192.168.1.0/26 gw 10.0.1.2') #r1-r3
     routers['r2'].cmd('route add -net 192.168.1.0/24 gw 10.0.0.1') #r2-r1 (prefix25 is ok) 64is 01000000 and 1 is 00000001
-    routers['r2'].cmd('route add -net 192.168.2.0/24 gw 192.168.2.125') #r2-h5+h6
+    routers['r2'].cmd('route add -net 192.168.2.0/24 gw 192.168.2.137') #r2-h5+h6
     routers['r3'].cmd('route add -net 192.168.1.64/26 gw 10.0.1.3') #r3-r4
     routers['r3'].cmd('route add -net 192.168.2.0/24 gw 10.0.1.1') #r3-r1
     routers['r4'].cmd('route add -net 192.168.1.0/26 gw 10.0.1.2') #r4-r3
